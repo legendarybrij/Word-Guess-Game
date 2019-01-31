@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Movie Maniac</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+   
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="font" type="text/css" href="assets/css/font/Neon.ttf" />
+    <script src="assets/javascript/game.js"></script>
+</head>
+<body>
+       
+      
+        <div class= "container-fluid col-12" id=backbox>
+             <div class = "row">
+                    
+                <div class="col-12" id="heading">
+                        <p>MOVIE MANIAC</p> 
+                </div>
+             </div>
+
+             <div class = "row" id="container">
+                    <div class="col-3" id="hide">
+                            MOVIEEEEEEEES
+                    </div>
+                    <div class="col-3" id="picframe">
+                            
+                    </div>
+                    <div class="col-0" id="between">
+                            34
+                    </div>
+
+                    <div class="col-3" id="content">
+                            Press Any key to Start the Game <br> <br>
+                            Press Alphabets Only <br> <br>
+                            Guess Name of the Movie <br> <br>
+                            <p>Word:</p><p id="rightWord"></p>
+                            <p>Tries Left:</p><p id="triesLeft">12</p>
+                            <p>Guessed Letters:</p><p id="guessLetters"></p>
+                            <script>
+                                    
+
+                               
+                                window.addEventListener("keyup", function(event){
+                                document.getElementById("rightWord").innerHTML = rightWord;
+                                 console.log("Lets Start Game"); 
+                                 console.log("keydown rightWord= "+ rightWord);
+                                 
+                                 console.log("Tries Left Before Key Press = " + triesLeft); 
+                                  console.log("word = " + word); 
+                                  console.log("Current Word = " + currentWord); 
+                                  var letter = event.key.toLowerCase();     
+                                  window.search(letter);
+                                  console.log("TriesLeft = " + triesLeft); 
+                                  console.log("Letters already Guessed = " + guessLetters);
+                                  console.log("keydown rightWord= "+ rightWord);
+                                  console.log("wins= "+ wins);
+                                  console.log("count= "+ count);
+                                  console.log(event.target);
+                                  console.log();
+                                  console.log("--------------- \n" );
+                                  
+                                  document.getElementById("rightWord").innerHTML = rightWord;
+                                  document.getElementById("triesLeft").innerHTML = triesLeft;
+                                  document.getElementById("guessLetters").innerHTML = guessLetters;
+                                  
+                                 });
+                                 
+                                 
+                                  
+                                  
+                            
+
+                                         
+                        
+
+                                   
+                          </script> 
+                    </div>
+    
+                    <div class="col-3" id="hide">
+                            MOVIEEEEEEEES
+                    </div>
+            </div>
+            
+            <div class = "row">
+                    
+                <div class="col-12" id="bottomspace">
+                        <p>space</p> 
+                </div>
+             </div>
+
+        </div>
+       
+    
+
+    
+
+
+
+    
+</body>
+</html>

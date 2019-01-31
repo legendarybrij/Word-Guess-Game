@@ -1,0 +1,69 @@
+#backbox {
+    background: url(../images/moviespic.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: auto;
+    opacity: 0.8;
+}
+
+#container {
+
+    margin-left: -40px;
+}
+
+#heading {
+    font-size: 10vw;;
+    color: #ffffff;
+    font-display: auto;
+    font-weight: bolder;
+    font-family: 'Neon', Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    margin-top: auto;
+    padding-bottom: -30px;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
+}
+
+
+#hide{
+    visibility: hidden;
+}
+
+#picframe {
+    width: 400px;
+    height:400px;
+    background-color: black;
+    margin-top: -30px;
+    opacity: 0.9;
+    border-style: dashed;
+    background-image: url(../images/lion.gif); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    
+}
+
+#between {
+    visibility: hidden;
+}
+
+#content {
+    width: 400px;
+    height:400px;
+    background-color:black;
+    margin-top: -30px;
+    border-style: dashed;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
+
+}
+
+
+#bottomspace {
+    
+    visibility: hidden;
+}
+
