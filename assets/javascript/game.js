@@ -14,7 +14,7 @@ var rightWord =[];
 for (var i=0; i<word.length; i++)
 {
     currentWord[i] = word[i];
-    rightWord[i]="_ ";
+    rightWord[i]="__";
 }
 //var fillArray=[];
 //var wordArray = [];
@@ -34,7 +34,7 @@ function search(j)
     //console.log("fillArray Length = " + fillArray.length);
             //The first for loop will compare user input with word and give back position of matched letter in a word
    
-            if(count===currentWord.length)
+           if(count===currentWord.length)
             {
                 
                 window.alert("You have guess the Movie name right. You win");
@@ -50,6 +50,7 @@ function search(j)
                 for (var i=0; i<word.length; i++)
                     {
                         currentWord[i] = word[i];
+                        rightWord[i]="__";
                     }
 
             }
@@ -127,6 +128,7 @@ return rightWord;
       for (var i=0; i<word.length; i++)
         {
             currentWord[i] = word[i];
+            rightWord[i]="__";
         }
   }
 

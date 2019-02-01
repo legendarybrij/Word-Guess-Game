@@ -35,17 +35,21 @@
 
                     <div class="col-3" id="content">
                             Press Any key to Start the Game <br> <br>
-                            Press Alphabets Only <br> <br>
                             Guess Name of the Movie <br> <br>
                             <p>Word:</p><p id="rightWord"></p>
                             <p>Tries Left:</p><p id="triesLeft">12</p>
-                            <p>Guessed Letters:</p><p id="guessLetters"></p>
+                            <p>Guessed Letters:</p><p id="guessLetters"> </p>
+                            <p>Wins:</p><p id="wins"> </p>
                             <script>
                                     
+                                    window.addEventListener("load", function(event){
+                                        document.getElementById("rightWord").innerHTML = rightWord.join('  ');
+                                        document.getElementById("wins").innerHTML = wins;
+                                    });
 
                                
                                 window.addEventListener("keyup", function(event){
-                                document.getElementById("rightWord").innerHTML = rightWord;
+                               // document.getElementById("rightWord").innerHTML = rightWord;
                                  console.log("Lets Start Game"); 
                                  console.log("keydown rightWord= "+ rightWord);
                                  
@@ -63,10 +67,12 @@
                                   console.log();
                                   console.log("--------------- \n" );
                                   
-                                  document.getElementById("rightWord").innerHTML = rightWord;
+                                  document.getElementById("rightWord").innerHTML = rightWord.join('  ');
                                   document.getElementById("triesLeft").innerHTML = triesLeft;
                                   document.getElementById("guessLetters").innerHTML = guessLetters;
+                                  document.getElementById("wins").innerHTML = wins;
                                   
+
                                  });
                                  
                                  
