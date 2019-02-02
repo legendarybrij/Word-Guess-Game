@@ -154,7 +154,7 @@ document.getElementById("rightWord").innerHTML = rightWord.join('  ');
 document.getElementById("triesLeft").innerHTML = triesLeft;
 document.getElementById("guessLetters").innerHTML = guessLetters.join(' ');
 document.getElementById("wins").innerHTML = wins;
-
+//cument.getElementById("video").innerHTML = videoElement;
 
 
 });
