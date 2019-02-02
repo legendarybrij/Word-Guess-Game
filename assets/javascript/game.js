@@ -24,9 +24,7 @@ var count = 0; //This count will add +1 if user guesses right letter of the movi
 
 
 //var videoElement = document.createElement("video");
-//videoElement.setAttribute("src", "https://www.youtube.com/watch?v=ad9Y38ZASPg");
-
-
+//videoElement.setAttribute("src", "assets/images/titanic.mp4");
 
 
 function search(j) 
@@ -38,10 +36,8 @@ function search(j)
             {
                 
                 window.alert("You have guess the Movie name right. You won buddy. Game over but don't worry. You can guess next movie name.");
-                wins++;
-                
-               
-               // videoElement.play();
+                wins++;     
+                //videoElement.play(); 
                 nameChange++;
                 triesLeft = 12;
                 count=0;
@@ -157,7 +153,7 @@ document.getElementById("rightWord").innerHTML = rightWord.join('  ');
 document.getElementById("triesLeft").innerHTML = triesLeft;
 document.getElementById("guessLetters").innerHTML = guessLetters.join(' ');
 document.getElementById("wins").innerHTML = wins;
-document.getElementById("video").innerHTML = videoElement;
+//cument.getElementById("video").innerHTML = videoElement;
 
 });
 
