@@ -1,45 +1,38 @@
 /* 1) Use word and convert each letter into different position in an wordArray and make empty fillArray same size as wordArray 
    2) When user inputs letter. Use for loop (letters are case sensitive) and .charAt to go through an wordArray and detect number of Positions the 
       matching letter is inside an wordArray. Save those positions in new array called letterMatch using array.push() 
-   3) Take positions from letterMatch and fill up same positions in fillArray with user input letter 
+   3) Take positions from letterMatch and fill up same positions in rightWord with user input letter 
    4) once all the positions are filled in fillArray the game ends and new word starts */
 
 
 var names = ["rampage", "pitchblack", "starwars", "avatar", "inception", "spiderman", "ironman", "gladiator"];
 
-var nameChange = 0;
-var word = names[nameChange];
-var currentWord = [];
-var rightWord =[];
+var nameChange = 0;  //this variable changes the number once movie name is finished
+var word = names[nameChange]; //This changes the movie name once movie is revealed
+var currentWord = []; //This will have different letters in of word split in array
+var rightWord =[]; //This will fill up as user guesses right letter of the movie
 for (var i=0; i<word.length; i++)
 {
     currentWord[i] = word[i];
     rightWord[i]="__";
 }
-//var fillArray=[];
-//var wordArray = [];
-//var letter= word.search("n");
+
 var triesLeft = 12;
 var guessLetters = [];
 var wins = 0;
 var count = 0;
 
-console.log("Word Length = " + word.length);
-
 function search(j) 
 {   var posArray=[];
-    /*var fillArray=[];*/
     var same = false;
     var j=j.toUpperCase();
-    //console.log("fillArray Length = " + fillArray.length);
-            //The first for loop will compare user input with word and give back position of matched letter in a word
-   
+            
            if(count===currentWord.length)
             {
                 
-                window.alert("You have guess the Movie name right. You win");
+                window.alert("You have guess the Movie name right. You won buddy. Game over but don't worry. You can guess next movie name.");
                 wins++;
-                window.alert("Game Over. Don't Worry. You can play this again.")
+                
                 nameChange++;
                 triesLeft = 12;
                 count=0;
@@ -66,7 +59,7 @@ function search(j)
                     if(guessLetters[i]===j)
                     {
                         same = true;
-                        window.alert("You already typed the letter " +j+ ". Please press ok and type different letter")
+                        window.alert("You already typed the letter " + j.toUpperCase()+ ". Please press ok and press different letter")
                         
                     }
                 }
@@ -78,23 +71,22 @@ function search(j)
                     if(rightWord[i]===j)
                     {
                         same = true;
-                        window.alert("You already typed the letter " +j+ ". Please press ok and type different letter")
+                        window.alert("You already typed the letter " +j+ ". Please press ok and press different letter.")
                         break;
                     }
                 }
 
            }
            
-           //console.log("same = " + same);
+           
            
            if (same === false)
-           {
+           {        //The first for loop will compare user input with word and give back position of matched letter in a word
                     for (var i = 0; i < word.length; i++) 
-                            {   //console.log("Interation = " + i);
+                            {   
                             if (word.charAt(i).toLowerCase() === j || word.charAt(i).toUpperCase() === j  ) 
                                 {
                                 posArray.unshift(i);
-                                console.log("Length of posArray = " + posArray.length + " posArray = " + posArray);
                                 }
                             }
                     
@@ -102,7 +94,6 @@ function search(j)
                     {    count = count + posArray.length;
                         for(var i=0; i<posArray.length; i++)
                         {
-                            /*fillArray[posArray[i]]= j;*/
                             rightWord[posArray[i]] = j;
                         }
                     }else {
@@ -117,7 +108,8 @@ function search(j)
 return rightWord;
   } else
   {   
-      window.alert("Game Over. Don't Worry. You can play this again.")
+      window.alert("Game Over. The name of the movie is " + word.toUpperCase() +". Don't Worry. You can play this again. Press any key to start again.")
+
       nameChange++;
       triesLeft = 12;
       count=0;

@@ -31,12 +31,13 @@
 }
 
 #picframe {
-    width: 400px;
-    height:400px;
+    width: auto;
+    height:content;
     background-color: black;
     margin-top: -30px;
     opacity: 0.9;
     border-style: dashed;
+    color: #ffffff;
     background-image: url(../images/lion.gif); 
     background-position: center;
     background-repeat: no-repeat;
@@ -50,8 +51,8 @@
 }
 
 #content {
-    width: 400px;
-    height:400px;
+    width: auto;
+    height:auto;
     background-color:black;
     margin-top: -30px;
     border-style: dashed;

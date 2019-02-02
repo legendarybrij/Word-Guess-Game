@@ -34,9 +34,9 @@
                     </div>
 
                     <div class="col-3" id="content">
-                            Press Any key to Start the Game <br> <br>
+                            Press Any Letter to Start the Game <br> <br>
                             Guess Name of the Movie <br> <br>
-                            <p>Word:</p><p id="rightWord"></p>
+                            <p>Movie Name:</p><p id="rightWord"></p>
                             <p>Tries Left:</p><p id="triesLeft">12</p>
                             <p>Guessed Letters:</p><p id="guessLetters"> </p>
                             <p>Wins:</p><p id="wins"> </p>
@@ -50,26 +50,35 @@
                                
                                 window.addEventListener("keyup", function(event){
                                // document.getElementById("rightWord").innerHTML = rightWord;
-                                 console.log("Lets Start Game"); 
-                                 console.log("keydown rightWord= "+ rightWord);
+                                // console.log("Lets Start Game"); 
+                                 //console.log("keydown rightWord= "+ rightWord);
                                  
-                                 console.log("Tries Left Before Key Press = " + triesLeft); 
-                                  console.log("word = " + word); 
-                                  console.log("Current Word = " + currentWord); 
-                                  var letter = event.key.toLowerCase();     
-                                  window.search(letter);
-                                  console.log("TriesLeft = " + triesLeft); 
+                                 //console.log("Tries Left Before Key Press = " + triesLeft); 
+                                  //console.log("word = " + word); 
+                                  //console.log("Current Word = " + currentWord); 
+                                  var letter = event.key.toLowerCase();  
+                                  console.log(event.keyCode);   
+                                  if (event.keyCode>64 && event.keyCode<91 )
+                                  {
+                                          window.search(letter);
+                                  }else
+                                  {
+                                          window.alert("Please Type In Alphabets Only")
+                                  }
+
+                                  
+                                  /*console.log("TriesLeft = " + triesLeft); 
                                   console.log("Letters already Guessed = " + guessLetters);
                                   console.log("keydown rightWord= "+ rightWord);
                                   console.log("wins= "+ wins);
                                   console.log("count= "+ count);
                                   console.log(event.target);
                                   console.log();
-                                  console.log("--------------- \n" );
+                                  console.log("--------------- \n" );*/
                                   
                                   document.getElementById("rightWord").innerHTML = rightWord.join('  ');
                                   document.getElementById("triesLeft").innerHTML = triesLeft;
-                                  document.getElementById("guessLetters").innerHTML = guessLetters;
+                                  document.getElementById("guessLetters").innerHTML = guessLetters.join(' ');
                                   document.getElementById("wins").innerHTML = wins;
                                   
 
