@@ -5,7 +5,7 @@
    4) once all the positions are filled in fillArray the game ends and new word starts */
 
 
-var names = ["rampage", "pitchblack", "starwars", "avatar", "inception", "spiderman", "ironman", "gladiator"];
+var names = ["Titanic", "TheGodfather", "Spiderman", "rampage", "pitchblack", "starwars", "avatar", "inception", "spiderman", "ironman", "gladiator", "interstellar", "TheMatrix"];
 
 var nameChange = 0;  //this variable changes the number once movie name is finished
 var word = names[nameChange]; //This changes the movie name once movie is revealed
@@ -17,17 +17,17 @@ for (var i=0; i<word.length; i++)
     rightWord[i]="__";
 }
 
-var triesLeft = 12;
-var guessLetters = [];
+var triesLeft = 12; 
+var guessLetters = []; //Letters that doesn't match the name of the movie are stored here
 var wins = 0;
-var count = 0;
+var count = 0; //This count will add +1 if user guesses right letter of the movie 
 
 function search(j) 
 {   var posArray=[];
     var same = false;
     var j=j.toUpperCase();
             
-           if(count===currentWord.length)
+           if(count===currentWord.length) 
             {
                 
                 window.alert("You have guess the Movie name right. You won buddy. Game over but don't worry. You can guess next movie name.");
@@ -81,7 +81,7 @@ function search(j)
            
            
            if (same === false)
-           {        //The first for loop will compare user input with word and give back position of matched letter in a word
+           {        //The loop will compare user input with word and give back position of matched letter in a word
                     for (var i = 0; i < word.length; i++) 
                             {   
                             if (word.charAt(i).toLowerCase() === j || word.charAt(i).toUpperCase() === j  ) 
@@ -125,5 +125,33 @@ return rightWord;
   }
 
 }
+
+
+window.addEventListener("load", function(event){
+    document.getElementById("rightWord").innerHTML = rightWord.join('  ');
+    document.getElementById("wins").innerHTML = wins;
+});
+
+
+window.addEventListener("keyup", function(event){ 
+var letter = event.key.toLowerCase();  
+//console.log(event.keyCode);   
+if (event.keyCode>64 && event.keyCode<91 )
+{
+      window.search(letter);
+}else
+{
+      window.alert("Please Type In Alphabets Only")
+}
+
+document.getElementById("rightWord").innerHTML = rightWord.join('  ');
+document.getElementById("triesLeft").innerHTML = triesLeft;
+document.getElementById("guessLetters").innerHTML = guessLetters.join(' ');
+document.getElementById("wins").innerHTML = wins;
+
+
+});
+
+
 
 
