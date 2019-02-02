@@ -96,6 +96,7 @@ function search(j)
                         {
                             rightWord[posArray[i]] = j;
                         }
+                        
                     }else {
                         triesLeft--; 
                         guessLetters.unshift(j);
@@ -155,3 +156,6 @@ document.getElementById("wins").innerHTML = wins;
 
 
 
+/*var vid = document.getElementById("titanic");
+vid.autoplay = true;
+vid.load();*/
