@@ -4,7 +4,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: auto;
+    height: 100%;
     opacity: 0.8;
 }
 
@@ -46,6 +46,14 @@
     
 }
 
+#picframe:hover, #content:hover {
+    
+    transform: scale(1.5);
+    transition: all;
+    transition-duration: 0.6s;
+      
+  }
+
 #between {
     visibility: hidden;
 }
@@ -68,4 +76,5 @@
     
     visibility: hidden;
 }
+
 
