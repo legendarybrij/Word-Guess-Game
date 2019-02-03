@@ -5,7 +5,7 @@
    4) once all the positions are filled in rightWord array the game ends and new word starts */
 
 
-var names = ["Titanic", "TheGodfather", "Spiderman", "rampage", "pitchblack", "starwars", "avatar", "inception", "spiderman", "ironman", "gladiator", "interstellar", "TheMatrix"];
+var names = ["Titanic", "TheGodfather", "Spiderman", "rampage", "pitchblack", "starwars", "avatar", "inception", "ironman", "gladiator", "interstellar", "TheMatrix"];
 
 var nameChange = 0;  //this variable changes the number once movie name is finished
 var word = names[nameChange]; //This changes the movie name once movie is revealed
@@ -25,7 +25,8 @@ var count; //This count will add +1 if user guesses right letter of the movie
 //var videoElement = document.createElement("video");
 //videoElement.setAttribute("src", "assets/images/titanic.mp4");
 //videoElement.play(); 
-
+var audioElement= document.createElement("audio");
+audioElement.setAttribute("src","assets/images/"+names[nameChange].toLowerCase()+".mp3");
 
 
 var  game = {
@@ -38,7 +39,6 @@ var  game = {
                             currentWord[i] = word[i];
                             rightWord[i]="__";
                         }
-
                         triesLeft = 12; 
                         guessLetters = [];
                         count = 0;
@@ -47,7 +47,8 @@ var  game = {
                     check: function() {
                         if(count===currentWord.length) 
                         {
-                            
+                            audioElement.setAttribute("src","assets/images/"+names[nameChange].toLowerCase()+".mp3");
+                            audioElement.play();
                             window.alert("You have guess the Movie name right. You won buddy. Wanna play more then press ok and you can guess next movie name.");
                             wins++;
                             nameChange++;
