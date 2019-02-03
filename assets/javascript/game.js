@@ -128,16 +128,7 @@ var  game = {
 
                             nameChange++;
                             triesLeft = 12;
-                            count=0;
-                            guessLetters = [];
-                            word = names[nameChange];
-                            rightWord=[];
-                            currentWord=[];
-                            for (var i=0; i<word.length; i++)
-                                {
-                                    currentWord[i] = word[i];
-                                    rightWord[i]="__";
-                                }
+                            game.init();
                         }
 
                     },
@@ -164,6 +155,10 @@ if (event.keyCode>64 && event.keyCode<91 )
 }else
 {
       window.alert("Please Type In Alphabets Only")
+      if(game.check()===true)
+      {
+          audioElement.play();
+      }
 }
 
 document.getElementById("rightWord").innerHTML = rightWord.join('  ');
