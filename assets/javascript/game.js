@@ -137,6 +137,7 @@ var  game = {
 
                 }
 
+ 
 //This event load will load with empty right word array and wins = 0
 window.addEventListener("load", function(event){
     document.getElementById("rightWord").innerHTML = rightWord.join('  ');
@@ -145,6 +146,7 @@ window.addEventListener("load", function(event){
     
 });
 
+//$(document).ready(function(){
 //This event keydown will will use function search and compare chars and displays matching chars
 window.addEventListener("keydown", function(event){ 
 var letter = event.key.toLowerCase();  
@@ -182,3 +184,5 @@ window.addEventListener("keyup", function(event){
 /*var vid = document.getElementById("titanic");
 vid.autoplay = true;
 vid.load();*/
+
+//});
